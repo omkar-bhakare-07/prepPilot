@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\dashboard",
+    "\\app\\dashboard\\interview",
+    "\\app\\dashboard\\interview\\[interviewId]",
+    "\\app\\dashboard\\interview\\[interviewId]\\start",
+    "\\app\\dashboard\\interview\\[interviewId]\\start\\_components",
+    "\\components\\ui"
+  ],
+  "SelectedNode": "\\app\\dashboard\\interview\\[interviewId]\\start\\page.jsx",
+  "PreviewInSolutionExplorer": false
+}
