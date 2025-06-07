@@ -39,6 +39,9 @@ function StartInterview() {
       const jsonMockResp = JSON.parse(result[0].jsonMockResp);
       setMockInterviewQuestion(jsonMockResp);
       setInterviewData(result[0]);
+      setQuestionStatus({
+        0: 'unanswered',
+      });
       console.log(jsonMockResp);
     } else {
       console.error('No interview found with this ID');
@@ -60,8 +63,6 @@ function StartInterview() {
       [index]: prev[index] === 'answered' ? 'answered' : 'unanswered',
     }));
   };
-  
-
 
   return (
     <div className="p-5">
@@ -78,7 +79,7 @@ function StartInterview() {
         </div>
 
         {/* Answer section */}
-        <div className="flex-1 flex flex-col justify-between border rounded p-4">
+        <div className="flex-1 flex flex-col border rounded p-4">
           <RecordAnswerSection
             mockInterviewQuestion={mockInterviewQuestion}
             activeQuestionIndex={activeQuestionIndex}
@@ -90,7 +91,7 @@ function StartInterview() {
             {activeQuestionIndex > 0 &&
               <Button onClick={() => handleQuestionChange(activeQuestionIndex - 1)}>Previous Question</Button>}
             {activeQuestionIndex !== mockInterviewQuestion.length - 1 &&
-              <Button onClick={() => setActiveQuestionIndex(activeQuestionIndex + 1)}>Next Question</Button>}
+              <Button onClick={() => handleQuestionChange(activeQuestionIndex + 1)}>Next Question</Button>}
             {activeQuestionIndex === mockInterviewQuestion.length - 1 &&
               <Link href={`/dashboard/interview/${interviewData?.mockId}/feedback`}>
                 <Button>End Interview</Button>

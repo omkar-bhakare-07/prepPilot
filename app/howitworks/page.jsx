@@ -2,7 +2,6 @@
 
 import React from 'react';
 
-
 export default function QuestionsPage() {
   return (
     <div className='p-10'>

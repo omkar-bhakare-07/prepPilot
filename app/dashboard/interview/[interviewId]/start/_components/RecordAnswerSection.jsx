@@ -48,7 +48,6 @@ function RecordAnswerSection({ mockInterviewQuestion, activeQuestionIndex, inter
       stopSpeechToText();
     }
     else {
-      console.log("Starting speech to text");
       startSpeechToText();
     }
   }
@@ -77,7 +76,7 @@ function RecordAnswerSection({ mockInterviewQuestion, activeQuestionIndex, inter
     })
 
     if (resp) {
-      toast("User answer recorded successfully")
+      toast.success("Answer recorded successfully",{className: 'bg-green-500 text-white font-bold',})
       setResults([]);
       if (onAnswerRecorded) {
         onAnswerRecorded(activeQuestionIndex, true);
