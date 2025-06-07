@@ -3,6 +3,15 @@ import React from 'react'
 import AddNewInterview from './_components/AddNewInterview'
 import InterviewList from './_components/InterviewList'
 
+export const metadata = {
+  title: 'prepPilot',
+  icons: {
+    icon: '/tabLogo.svg',
+  },
+}
+
+
+
 function Dashboard() {
   return (
     <div className='p-10'>
